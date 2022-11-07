@@ -19,7 +19,8 @@ export class BodyComponent implements OnInit {
     .subscribe( emisionusers =>{
       this.users= emisionusers;
       // this.usersArray = this.users.users.users;
-          
+      console.log("console.log"); 
+     console.log(this.users);   
     
     });  }
 
