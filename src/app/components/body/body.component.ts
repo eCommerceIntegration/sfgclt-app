@@ -12,7 +12,7 @@ export class BodyComponent implements OnInit {
 
 
   constructor(private _users:UsersService ) { }
-  ngOnInit(): void { this.findUsers }
+  ngOnInit(): void { this.findUsers() }
 
   findUsers(){
     this._users.findAll()
