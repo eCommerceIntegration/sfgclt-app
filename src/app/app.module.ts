@@ -7,7 +7,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { UserFormComponent } from './components/user-form/user-form.component'
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {HttpClientModule} from '@angular/common/http'
     AppComponent,
     NavbarComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

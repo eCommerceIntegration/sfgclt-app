@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -8,7 +8,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit{
+
+  ngOnInit(): void { this.initialLoad }
+
+  initialLoad(){
+    console.log("Initial console.log"); 
+  }
+
   constructor(private modalService: NgbModal) {
   }
   public open(modal: any): void {
@@ -16,4 +24,5 @@ export class AppComponent {
   }
   
   title = 'sfgclt-app';
+  
 }
