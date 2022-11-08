@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/services/users.service';
+import { UserService } from '@app/services/user-service';
 
 @Component({
   selector: 'app-body',
@@ -9,9 +9,10 @@ import { UsersService } from 'src/app/services/users.service';
 export class BodyComponent implements OnInit {
   users: any;
   usersArray: any;
+  title: any;
 
 
-  constructor(private _users:UsersService ) { }
+  constructor(private _users:UserService ) { }
   ngOnInit(): void { this.findUsers() }
 
   findUsers(){

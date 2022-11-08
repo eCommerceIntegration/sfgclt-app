@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -9,7 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
-import { UserFormComponent } from './components/user-form/user-form.component'
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { UserListComponent } from './components/user-list/user-list.component'
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { UserFormComponent } from './components/user-form/user-form.component'
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
