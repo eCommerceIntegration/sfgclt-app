@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserListComponent } from './components/user-list/user-list.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './services/user-service';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HeaderComponent,
     UserFormComponent,
-    UserListComponent
+    UserListComponent,
+    UserService
+    
   ],
   imports: [
     BrowserModule,
