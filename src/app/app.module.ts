@@ -19,8 +19,7 @@ import { UserListComponent } from './components/user-list/user-list.component'
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    UserFormComponent,
-    UserListComponent
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
