@@ -22,20 +22,18 @@ import { UserService } from './services/user-service';
     FooterComponent,
     HeaderComponent,
     UserFormComponent,
-    UserListComponent,
-    UserService
+    UserListComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
     AppRoutingModule,
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
