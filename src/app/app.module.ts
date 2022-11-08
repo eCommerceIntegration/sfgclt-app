@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserListComponent } from './components/user-list/user-list.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,10 +20,13 @@ import { UserListComponent } from './components/user-list/user-list.component'
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule
