@@ -10,9 +10,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td><a href="mailto:{{ user.emailPersonal }}">{{ user.emailPersonal }}</a></td>
           </tr>
         </tbody>
       </table>
