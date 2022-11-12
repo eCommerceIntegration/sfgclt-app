@@ -12,15 +12,15 @@ export class UserService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://127.0.0.1:8080/users/list';
+    this.usersUrl = 'http://127.0.0.1:8080/users';
    }
 
    public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+    return this.http.get<User[]>(this.usersUrl+"/list");
   }
 
   public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
+    return this.http.post<User>(this.usersUrl+"/new", user);
   }
   }
 /*  findById(private _aLong:String) { return this.http.get(this.url+'/list') ;  }
