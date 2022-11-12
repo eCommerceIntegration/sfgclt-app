@@ -22,6 +22,7 @@ export class UserService {
   public save(user: User) {
     return this.http.post<User>(this.usersUrl+"/new", user);
   }
+
   }
 /*  findById(private _aLong:String) { return this.http.get(this.url+'/list') ;  }
  save(User object) { return this.http.get(this.url+'/list') ;  }
