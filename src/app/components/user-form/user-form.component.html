@@ -54,8 +54,8 @@
         <label for="name">Name</label>
         <input type="text" [(ngModel)]="user.firstName" 
           class="form-control" 
-          id="name" 
-          name="name" 
+          id="firstName" 
+          name="firstName" 
           placeholder="Enter your name"
           required #name="ngModel">
       </div>
@@ -64,8 +64,8 @@
         <label for="email">Email</label>
         <input type="text" [(ngModel)]="user.emailPersonal" 
           class="form-control" 
-          id="email" 
-          name="email" 
+          id="emailPersonal" 
+          name="emailPersonal" 
           placeholder="Enter your email address"
           required #email="ngModel">
         <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
