@@ -24,6 +24,7 @@ export class UserFormComponent  {
   }
 
   gotoUserList() {
-    this.router.navigate(['/users/list']);
-  }
+    setTimeout(() => {
+      this.router.navigate(['/users/list']);
+    }, 1000);  }
 }
