@@ -10,11 +10,20 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
+            <td><a href="users/{{ user.id }}/edit">{{ user.id }}</a></td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td><a href="mailto:{{ user.emailPersonal }}">{{ user.emailPersonal }}</a></td>
           </tr>
         </tbody>
       </table>
+      <div class="card-body">
+          <button type="button" class="btn btn-primary btn-rounded">Agregar </button>
+          <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
+          <button type="button" class="btn btn-success btn-rounded">Success</button>
+          <button type="button" class="btn btn-danger btn-rounded">Eiminarr</button>
+          <button type="button" class="btn btn-warning btn-rounded">Warning</button>
+          <button type="button" class="btn btn-info btn-rounded">Info</button>
+      </div>
     </div>
   </div>
