@@ -16,8 +16,8 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void { this.findUsers() }
 
   findUsers(){
-    this._users.findAll()
-    .subscribe( emisionusers =>{
+    this._users.listUsers()
+    .subscribe( (emisionusers: any) =>{
       this.users= emisionusers;
       // this.usersArray = this.users.users.users;
       console.log("console.log"); 

@@ -21,9 +21,13 @@
           <button type="button" class="btn btn-primary btn-rounded">Agregar </button>
           <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
           <button type="button" class="btn btn-success btn-rounded">Success</button>
-          <button type="button" class="btn btn-danger btn-rounded">Eiminarr</button>
+          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button>
+          <a type="button" class="btn btn-secondary btn-rounded" [routerLink]="['/users', users]">John Doe</a>
           <button type="button" class="btn btn-warning btn-rounded">Warning</button>
           <button type="button" class="btn btn-info btn-rounded">Info</button>
       </div>
+    </div>
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
   </div>

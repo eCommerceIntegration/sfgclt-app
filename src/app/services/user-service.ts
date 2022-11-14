@@ -10,18 +10,41 @@ import { User } from '../model/user';
 export class UserService {
 
   private usersUrl: string;
+  private userUrl: string;
 
   constructor(private http: HttpClient) {
     this.usersUrl = 'http://127.0.0.1:8080/users';
    }
 
-   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl+"/list");
+   public listUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl+"/list");  }
+
+  public saveUser(user: User) {
+    return this.http.post<User>(this.usersUrl+"/new", user); }
+
+  // public findUser(idUser: String | null) {
+  //   return this.http.post<User>(this.usersUrl+"/new", idUser) }
+
+  public findUser(idUser: String | null) {
+    return this.http.get<User[]>(this.usersUrl+"/{{idUser}}") }
+
+
+
+   editUser(idUser: String |null): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);  
   }
 
-  public save(user: User) {
-    return this.http.post<User>(this.usersUrl+"/new", user);
+
+/* 
+  obtenerPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.baseURLPosts);
   }
+ 
+  obtenerPostsPorUsuario(id: string): Observable<Post[]> {
+    const url = `${this.baseURLPosts}?userId=${id}`;
+    return this.http.get<Post[]>(url);
+  }
+ */
 
   }
 /*  findById(private _aLong:String) { return this.http.get(this.url+'/list') ;  }
