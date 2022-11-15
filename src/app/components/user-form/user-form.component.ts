@@ -11,37 +11,35 @@ import { User } from '../../model/user';
 export class UserFormComponent  {
 
   user: User;
-  param:String
+  users: User[];
 
   constructor(
-    private route: ActivatedRoute, 
+      private route: ActivatedRoute, 
       private router: Router, 
-        private userService: UserService) {
-        this.user = new User();
+      private userService: UserService) {
+    this.user = new User();  }
+
+
+    ngOnInit() {
+
+      this.route.paramMap.subscribe(params =>{
+        if (params.has("id")) {
+          this.userService.editUser(params.get("id")).subscribe(users =>this.users = users);
+        }else{
+          this.userService.listUsers().subscribe(users =>this.users = users);
+        }
+      })
+
   }
-
-  ngOnInit() {
-
-    // this.route.paramMap.subscribe(params =>{
-    //   params.get("id")
-    //   if (params.has("id")) {
-    //     this.userService.findUser(params.get("id")).subscribe(users =>this.user = this.userService.findUser(params.get("id")));
-    //   }else{
-      this.userService.listUsers().subscribe(users =>this.user = users);
-    //   }
-    // })
-
-  } 
-
   onSubmit() {
     this.userService.saveUser(this.user).subscribe(result => this.gotoUserList());
   }
 
-  gotoUserEdit(id:String){
-    this.router.navigate(['/users/{{id}}/list']);
-  }
-
   gotoUserList() {
     this.router.navigate(['/users/list']);
+  }
+
+  gotoUserEdit(id:String){
+    this.router.navigate(['/users/{{id}}/list']);
   }
 }

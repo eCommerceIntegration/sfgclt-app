@@ -18,13 +18,15 @@
         </tbody>
       </table>
       <div class="card-body">
-          <button type="button" class="btn btn-primary btn-rounded">Agregar </button>
-          <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoUserAdd()">John Doe</a>
+          <!-- <button type="button" class="btn btn-primary btn-rounded">Agregar </button> -->
+        <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit()">John Doe</a>
+<!--           <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
           <button type="button" class="btn btn-success btn-rounded">Success</button>
-          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button>
-          <a type="button" class="btn btn-secondary btn-rounded" [routerLink]="['/users', users]">John Doe</a>
-          <button type="button" class="btn btn-warning btn-rounded">Warning</button>
-          <button type="button" class="btn btn-info btn-rounded">Info</button>
+          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button> -->
+          <a type="button" class="btn btn-success btn-rounded" (click)="gotoUserDelete()">John Doe</a>
+<!--           <button type="button" class="btn btn-warning btn-rounded">Warning</button>
+          <button type="button" class="btn btn-info btn-rounded">Info</button> -->
       </div>
     </div>
     <div class="container">

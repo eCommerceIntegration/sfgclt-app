@@ -21,14 +21,13 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.paramMap.subscribe(params =>{
-      if (params.has("id")) {
-        this.userService.editUser(params.get("id")).subscribe(users =>this.users = users);
-      }else{
-        'this.userService.listUsers().subscribe(users =>this.users = users);
-      }
-    })
-
+    // this.route.paramMap.subscribe(params =>{
+    //   if (params.has("id")) {
+    //     this.userService.editUser(params.get("id")).subscribe(users =>this.users = users);
+    //   }else{
+        this.userService.listUsers().subscribe(users =>this.users = users);
+   //   }
+   // })
   }
 
   gotoUserList() {
@@ -38,8 +37,15 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/users/list']);
   }
 
-  gotoAgregar() {
+  gotoUserAdd() {
     this.router.navigate(['/users/new']);
   }
 
+  gotoUserEdit(){
+    this.router.navigate(['/users/{{id}}/edit']);
+  }
+
+  gotoUserDelete(){
+    this.router.navigate(['/users/{{id}}/delete']);
+  }
 }
