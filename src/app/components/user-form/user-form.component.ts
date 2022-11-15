@@ -23,8 +23,8 @@ export class UserFormComponent  {
     ngOnInit() {
 
       this.route.paramMap.subscribe(params =>{
-        if (params.has("id")) {
-          this.userService.editUser(params.get("id")).subscribe(users =>this.users = users);
+        if (params.has("user.id")) {
+          this.userService.editUser(params.get("user.id")).subscribe(users =>this.users = users);
         }else{
           this.userService.listUsers().subscribe(users =>this.users = users);
         }
@@ -40,6 +40,6 @@ export class UserFormComponent  {
   }
 
   gotoUserEdit(id:String){
-    this.router.navigate(['/users/{{id}}/list']);
+    this.router.navigate(['/users/{{"user.id"}}/list']);
   }
 }

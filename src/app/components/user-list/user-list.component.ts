@@ -13,6 +13,7 @@ import { UserService } from '../../services/user-service';
 export class UserListComponent implements OnInit {
 
   users: User[];
+  user: User;
 
   constructor(private userService: UserService,   
     private route: ActivatedRoute, 
@@ -41,8 +42,9 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/users/new']);
   }
 
-  gotoUserEdit(){
-    this.router.navigate(['/users/{{id}}/edit']);
+  gotoUserEdit(id:String){
+ //   this.router.navigate(['/users/{{id}}/edit']);
+    this.router.navigate(["/users",id , 'edit']);
   }
 
   gotoUserDelete(){

@@ -11,6 +11,7 @@
         <tbody>
           <tr *ngFor="let user of users">
             <td><a href="users/{{ user.id }}/edit">{{ user.id }}</a></td>
+            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserEdit(user.id)">Agregar </button></td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td><a href="mailto:{{ user.emailPersonal }}">{{ user.emailPersonal }}</a></td>
@@ -20,7 +21,7 @@
       <div class="card-body">
         <a type="button" class="btn btn-primary btn-rounded" (click)="gotoUserAdd()">John Doe</a>
           <!-- <button type="button" class="btn btn-primary btn-rounded">Agregar </button> -->
-        <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit()">John Doe</a>
+        <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit(user.id)">John Doe</a>
 <!--           <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
           <button type="button" class="btn btn-success btn-rounded">Success</button>
           <button type="button" class="btn btn-danger btn-rounded">Eiminar</button> -->

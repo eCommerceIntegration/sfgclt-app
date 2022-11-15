@@ -28,8 +28,6 @@ export class UserService {
   public findUser(idUser: String | null) {
     return this.http.get<User[]>(this.usersUrl+"/{{idUser}}") }
 
-
-
    editUser(idUser: String |null): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);  
   }
