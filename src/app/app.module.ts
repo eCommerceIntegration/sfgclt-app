@@ -2,33 +2,32 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { BodyComponent } from './components/body/body.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './landing/navbar/navbar.component';
+import { BodyComponent } from './landing/body/body.component';
+import { FooterComponent } from './landing/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
-import { HeaderComponent } from './components/header/header.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
-import { UserListComponent } from './components/user-list/user-list.component'
+import { HeaderComponent } from './landing/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserService } from './services/user-service'
+import { UserService } from './users/services/user-service'
+import { UsersModule } from './users/users.module';
+import { LandingModule } from './landing/landing.module';
 
 @NgModule({
-  declarations: [   
+  declarations: [ 
+    AppComponent,
     NavbarComponent,
     BodyComponent,
     FooterComponent,
-    HeaderComponent,
-    UserFormComponent,
-    UserListComponent
-    
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UsersModule,
+    AppRoutingModule,
+    LandingModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

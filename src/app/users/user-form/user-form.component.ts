@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../../services/user-service';
+import { UserService } from '../services/user-service';
 import { User } from '../../model/user';
 
 @Component({
@@ -8,8 +8,10 @@ import { User } from '../../model/user';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent  {
 
+
+
+export class UserFormComponent  {
   user: User ;
   users: User[];
 
