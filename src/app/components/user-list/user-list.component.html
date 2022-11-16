@@ -10,23 +10,26 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
-            <td><a href="users/{{ user.id }}/edit">{{ user.id }}</a></td>
-            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserEdit(user.id)">Agregar </button></td>
+            <td><a href="users/{{ user.id }}/edit">{{ user.id }}</a>Edit URL</td>            
+            <td><a href="users/{{ user.id }}/delete">{{ user.id }}</a>Delete URL</td>
+            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserEdit(user.id)">Edit Boton</button></td>
+            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserDelete(user.id)">Delete Boton</button></td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td><a href="mailto:{{ user.emailPersonal }}">{{ user.emailPersonal }}</a></td>
+
           </tr>
         </tbody>
       </table>
       <div class="card-body">
-        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoUserAdd()">John Doe</a>
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoUserAdd()">Agregar</a>
           <!-- <button type="button" class="btn btn-primary btn-rounded">Agregar </button> -->
-        <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit(user.id)">John Doe</a>
-<!--           <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
+<!--         <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit(user.id)">Editar</a>
+          <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
           <button type="button" class="btn btn-success btn-rounded">Success</button>
-          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button> -->
-          <a type="button" class="btn btn-success btn-rounded" (click)="gotoUserDelete()">John Doe</a>
-<!--           <button type="button" class="btn btn-warning btn-rounded">Warning</button>
+          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button> 
+          <a type="button" class="btn btn-success btn-rounded" (click)="gotoUserDelete()">Eliminar</a>
+          <button type="button" class="btn btn-warning btn-rounded">Warning</button>
           <button type="button" class="btn btn-info btn-rounded">Info</button> -->
       </div>
     </div>

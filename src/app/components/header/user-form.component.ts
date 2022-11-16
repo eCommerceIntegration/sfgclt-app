@@ -10,7 +10,7 @@ import { User } from '../../model/user';
 })
 export class UserFormComponent  {
 
-  user: User ;
+  user: User;
   users: User[];
 
   constructor(
@@ -22,13 +22,14 @@ export class UserFormComponent  {
 
     ngOnInit() {
 
-      this.route.paramMap.subscribe(params =>{
+/*       this.route.paramMap.subscribe(params =>{
         if (params.has("user.id")) {
-          this.userService.findUser(params.get("user.id")).subscribe(user =>this.user = user);
+          this.userService.findUser(params.get("user.id")).subscribe(users =>this.users = users);
         }else{
           this.userService.listUsers().subscribe(users =>this.users = users);
         }
-      }) 
+      }) */
+
   }
   onSubmit() {
     this.userService.saveUser(this.user).subscribe(result => this.gotoUserList());  }
@@ -37,9 +38,5 @@ export class UserFormComponent  {
     this.router.navigate(['/users/list']);  }
 
   gotoUserEdit(id:String){
-    this.router.navigate(['/users/{{"id"}}/list']);  }
-
-    gotoUserDelete(id:String){
-      this.router.navigate(['/users/{{"id"}}/delete']);  }
-  
+    this.router.navigate(['/users/{{"user.id"}}/list']);  }
 }

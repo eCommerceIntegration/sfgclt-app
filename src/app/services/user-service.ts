@@ -25,15 +25,34 @@ export class UserService {
   // public findUser(idUser: String | null) {
   //   return this.http.post<User>(this.usersUrl+"/new", idUser) }
 
-  public findUser(idUser: String | null) {
-    return this.http.get<User[]>(this.usersUrl+"/{{idUser}}") }
+/*   public findUser(idUser: String) {
+    return this.http.get<User[]>(this.usersUrl+"/", idUser); }   */
 
-   editUser(idUser: String |null): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);  
-  }
+  public findUser(idUser: String |null) {
+    const findurl = this.usersUrl+"/"+idUser;
+    return this.http.get<User>(findurl+"/edit")}  
+
+/*     public deleUser(idUser: String |null) {
+      const findurl = this.usersUrl+"/"+idUser;
+      return this.http.get<User>(findurl+"/delete")}   */
+
+/*   public deleUser(idUser: String |null): Observable<User> {
+    const findurl = this.usersUrl+"/"+idUser;
+    return this.http.get<User>(findurl+"/delete")     
+  }  */ 
+   
+  
+  public deleUser(idUser: String |null): Observable<User> {
+    const findurl = this.usersUrl+"/"+idUser;
+    return this.http.get<User>(findurl+"/delete")     
+  }  
 
 
 /* 
+   xeditUser(idUser: String |null): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);  
+  }
+
   obtenerPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.baseURLPosts);
   }

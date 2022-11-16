@@ -21,16 +21,16 @@ export class UserListComponent implements OnInit {
    }
 
   ngOnInit() {
-
-    // this.route.paramMap.subscribe(params =>{
-    //   if (params.has("id")) {
-    //     this.userService.editUser(params.get("id")).subscribe(users =>this.users = users);
-    //   }else{
-        this.userService.listUsers().subscribe(users =>this.users = users);
-   //   }
-   // })
-  }
-
+  //this.userService.listUsers().subscribe(users =>this.users = users);
+ 
+  this.route.paramMap.subscribe(params =>{
+    if (params.has("user.id")) {
+      this.userService.deleUser(params.get("user.id")).subscribe(user =>this.user = user);
+    }else{
+      this.userService.listUsers().subscribe(users =>this.users = users);
+    }
+  }) 
+}
   gotoUserList() {
     this.userService.listUsers().subscribe(data => {
       this.users = data;
@@ -43,11 +43,17 @@ export class UserListComponent implements OnInit {
   }
 
   gotoUserEdit(id:String){
- //   this.router.navigate(['/users/{{id}}/edit']);
-    this.router.navigate(["/users",id , 'edit']);
+    this.router.navigate(["/users",id, 'edit']);
   }
 
-  gotoUserDelete(){
-    this.router.navigate(['/users/{{id}}/delete']);
+/*   gotoUserDelete(id:String){
+    this.router.navigate(["/users",id,'delete']);
+  } */
+
+  gotoUserDelete(id:String){
+    this.userService.deleUser(id).then (() => this.router.navigate(['/users/list']));
+
   }
+
+
 }

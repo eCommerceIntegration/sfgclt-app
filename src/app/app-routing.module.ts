@@ -9,6 +9,8 @@ const routes: Routes = [
   // { path: '', redirectTo:'/users' , pathMatch: 'full' }, 
   { path: 'users/new', component:  UserFormComponent  }, 
   { path: 'users/:user.id/edit', component: UserFormComponent, pathMatch: 'full' }, 
+  { path: 'users/:user.id/delete', component: UserFormComponent, pathMatch: 'full' }, 
+ // { path: 'users/:user.id/delete', redirectTo:'/users' , pathMatch: 'full' }, 
   { path: 'adduser', component: UserFormComponent }
 
 ];
