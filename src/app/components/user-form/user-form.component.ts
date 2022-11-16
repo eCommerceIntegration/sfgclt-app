@@ -21,25 +21,45 @@ export class UserFormComponent  {
 
 
     ngOnInit() {
-
       this.route.paramMap.subscribe(params =>{
         if (params.has("user.id")) {
           this.userService.findUser(params.get("user.id")).subscribe(user =>this.user = user);
         }else{
-          this.userService.listUsers().subscribe(users =>this.users = users);
-        }
-      }) 
-  }
+          this.userService.listUsers().subscribe(users =>this.users = users); }
+      }) }
+
   onSubmit() {
     this.userService.saveUser(this.user).subscribe(result => this.gotoUserList());  }
 
-  gotoUserList() {
+ /*  gotoUserList() {
     this.router.navigate(['/users/list']);  }
 
   gotoUserEdit(id:String){
     this.router.navigate(['/users/{{"id"}}/list']);  }
 
-    gotoUserDelete(id:String){
-      this.router.navigate(['/users/{{"id"}}/delete']);  }
-  
+  gotoUserDelete(id:String){
+      this.router.navigate(['/users/{{"id"}}/delete']);  } */
+
+
+  gotoUserList() {
+    this.userService.listUsers().subscribe(data => {
+      this.users = data;
+    });
+    this.router.navigate(['/users/list']);
+  }
+
+  gotoUserEdit(id:String){
+    this.router.navigate(["/users",id, 'edit']);
+  }
+
+  gotoUserDelete(id:String){
+
+ //    this.userService.deleUser(id).then (() => this.router.navigate(['/users/list']));
+      this.userService.deleUser(id).subscribe(data => {
+      });
+      this.router.navigate(['/users/list']);
+  }
+
+      
+      
 }
