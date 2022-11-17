@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './users/services/user-service'
 import { UsersModule } from './users/users.module';
 import { LandingModule } from './landing/landing.module';
+import { RegusersModule } from './regusers/regusers.module';
 
 @NgModule({
   declarations: [ 
@@ -25,9 +26,10 @@ import { LandingModule } from './landing/landing.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    UsersModule,
-    AppRoutingModule,
     LandingModule,
+    UsersModule,
+    RegusersModule,
+    AppRoutingModule 
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink=""  [routerLinkActive]="'Active'">
-        <h1>Angular Bootstrap</h1>
+      <a class="navbar-brand" routerLink="/home"  [routerLinkActive]="'Active'">
+        <h1>Ksutra</h1>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,20 +9,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink=""  [routerLinkActive]="'Active'">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/home"  [routerLinkActive]="'Active'">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink=""  [routerLinkActive]="'Active'">Link</a>
+            <a class="nav-link" routerLink="/link"  [routerLinkActive]="'Active'">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" routerLink=""  [routerLinkActive]="'Active'"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
+            <a class="nav-link dropdown-toggle" routerLink=""  [routerLinkActive]="'Active'"  
+            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink=""  [routerLinkActive]="'Active'">Action</a></li>
-              <li><a class="dropdown-item" routerLink=""  [routerLinkActive]="'Active'">Another action</a></li>
+              <li><a class="dropdown-item" routerLink="users"  [routerLinkActive]="'Active'">Usuarios</a></li>
+              <li><a class="dropdown-item" routerLink="regusers"  [routerLinkActive]="'Active'">Registro Usuarios</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" routerLink=""  [routerLinkActive]="'Active'">Something else here</a></li>
+
             </ul>
           </li>
           <li class="nav-item">
