@@ -28,8 +28,8 @@ import { RegusersModule } from './regusers/regusers.module';
     ReactiveFormsModule,
     LandingModule,
     UsersModule,
-    RegusersModule,
-    AppRoutingModule 
+    AppRoutingModule,
+    RegusersModule 
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

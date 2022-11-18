@@ -1,0 +1,30 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id App</th>
+            <th scope="col">App Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reguser of regusers">
+            <td><a href="regusers/{{ reguser.idApp }}/edit">{{ reguser.idApp }}</a>Edit URL</td>            
+            <td><a href="regusers/{{ reguser.idApp }}/delete">{{ reguser.idApp }}</a>Delete URL</td>
+            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserEdit(reguser.idApp)">Edit Boton</button></td>
+            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.idApp)">Delete Boton</button></td>
+            <td>{{ reguser.regAppName }}</td>
+            <td>{{ reguser.idCountry }}</td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="card-body">
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserAdd()">Agregar</a>
+      </div>
+    </div>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+

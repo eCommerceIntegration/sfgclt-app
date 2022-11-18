@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { RegusersRoutingModule } from './regusers-routing.module';
-import { ReguserComponent } from './reguser/reguser.component';
+import { ReguserFormComponent } from './reguser-form/reguser-form.component';
+import { ReguserListComponent } from './reguser-list/reguser-list.component';
 
 
 @NgModule({
   declarations: [
-    ReguserComponent
+    ReguserFormComponent,
+    ReguserListComponent
   ],
   imports: [
     CommonModule,
