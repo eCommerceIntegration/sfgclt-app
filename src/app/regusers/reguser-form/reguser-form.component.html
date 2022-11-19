@@ -1,4 +1,4 @@
-  <div class="card my-5">
+<div class="card my-5">
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #userForm="ngForm" id=" user" name="user"> 
         <div class="form-group">
@@ -23,7 +23,7 @@
         </div>
         <div class="card-body">
           <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Actualizar</button>
-          <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUser(reguser.idApp)">Registro</a>
+          <!-- <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUser(reguser.idApp)">Add Registro</a> -->
           <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.idApp)">Delete</a>
           </div>
       </form>
@@ -32,5 +32,3 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  
-    

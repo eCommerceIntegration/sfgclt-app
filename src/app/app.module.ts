@@ -12,6 +12,7 @@ import { UserService } from './users/services/user-service'
 import { UsersModule } from './users/users.module';
 import { LandingModule } from './landing/landing.module';
 import { RegusersModule } from './regusers/regusers.module';
+import { RegUserService } from './regusers/services/reguser-service';
 
 @NgModule({
   declarations: [ 
@@ -28,10 +29,11 @@ import { RegusersModule } from './regusers/regusers.module';
     ReactiveFormsModule,
     LandingModule,
     UsersModule,
-    AppRoutingModule,
-    RegusersModule 
+    RegusersModule,
+    AppRoutingModule
+  
   ],
-  providers: [UserService],
+  providers: [UserService,RegUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

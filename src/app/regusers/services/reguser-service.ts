@@ -9,14 +9,16 @@ import { Reguser } from '../../regusers/model/reguser.model';
 export class RegUserService {
 
   private regusersUrl: string;
-  private reguserUrl: string;
+ // private reguserUrl: string;
 
   constructor(private http: HttpClient) {
-    this.reguserUrl = 'http://127.0.0.1:8080/regusers';
+    this.regusersUrl = 'http://127.0.0.1:8080/regusers';
    }
 
-   public listRegUsers(): Observable<Reguser[]> {
-    return this.http.get<|Reguser[]>(this.regusersUrl+"/list");  }
+   public listRegUsers(idUser: String |null): Observable<Reguser[]> {
+    const findurl = this.regusersUrl+"/"+idUser;
+    return this.http.get<Reguser[]>(findurl+"/list")  ;  }  
+ //   return this.http.get<|Reguser[]>(this.regusersUrl+"/list");  }
 
   public saveRegUser(reguser: Reguser) {
     return this.http.post<Reguser>(this.regusersUrl+"/new", reguser); }

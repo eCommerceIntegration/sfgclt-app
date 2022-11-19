@@ -1,6 +1,4 @@
-import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../model/user';
 import { UserService } from '../services/user-service';

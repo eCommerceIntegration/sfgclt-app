@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user-service';
-import { RegUserService } from '../../regusers/services/reguser-service';
+//import { RegUserService } from '../../regusers/services/reguser-service';
 import { User } from '../model/user';
 
 @Component({
@@ -11,7 +11,6 @@ import { User } from '../model/user';
 })
 
 
-
 export class UserFormComponent  {
   user: User ;
   users: User[];
@@ -19,8 +18,8 @@ export class UserFormComponent  {
   constructor(
       private route: ActivatedRoute, 
       private router: Router, 
-      private userService: UserService,
-      private regUserService: RegUserService
+      private userService: UserService
+     // private regUserService: RegUserService
       ) {
     this.user = new User();  }
 
@@ -58,21 +57,14 @@ export class UserFormComponent  {
   }
 
   gotoUserDelete(id:String){
-
- //    this.userService.deleUser(id).then (() => this.router.navigate(['/users/list']));
       this.userService.deleUser(id).subscribe(data => {
       });
       this.router.navigate(['/users/list']);
   }
 
-  
 
   gotoRegUser(id:String){
-
-    //    this.userService.deleUser(id).then (() => this.router.navigate(['/users/list']));
-         this.regUserService.deleRegUser(id).subscribe(data => {
-         });
-         this.router.navigate(['/regusers/list']);
+         this.router.navigate(["/regusers",id, 'list']);
      } 
       
 }
