@@ -20,7 +20,7 @@ export class ReguserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>{
-      if (params.has("reguser.id")) {
+      if (params.has("user.id")) {
         this.regUserService.listRegUsers(params.get("user.id")).subscribe(users =>this.regusers = users);      
       }else{
         this.regUserService.deleRegUser(params.get("user.id")).subscribe(user =>this.reguser = user);
