@@ -1,6 +1,24 @@
 <div class="card my-5">
     <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #userForm="ngForm" id=" user" name="user"> 
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm" id=" reguser" name="reguser"> 
+
+<!--    
+          debe traer el id del usuario y enviarlo en el subnit
+          como campo obligatorio
+          asi se genera el sabe del comonente reguser que es el id del form]
+          como llebnar los enu: todos son servicios !!
+          <input hidden type="text" [(ngModel)]="{{id}}" 
+            class="form-control" 
+            id="idUser" 
+            name="idUser" 
+            required #name="ngModel"> -->
+<!--         <div class="form-group">
+            <label for="propertyType">Property Type</label>
+            <select id="regAppName" ="regAppName" name="regAppName">
+              <option [ngValue]="null">Select one...</option>
+              <option *ngFor="let regAppName of eregAppName | keyvalue" [ngValue]="regAppName.value">{{regAppName.value}}</option>
+            </select>
+          </div>   -->         
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" [(ngModel)]="reguser.idApp" 
@@ -22,8 +40,9 @@
           <div [hidden]="!email.pristine" class="alert alert-danger">regAppName is required</div>
         </div>
         <div class="card-body">
-          <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Actualizar</button>
+          <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Actualizar Sub</button>
           <!-- <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUser(reguser.idApp)">Add Registro</a> -->
+          <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserSave(reguser.idApp)">Actualizar goto</a>
           <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.idApp)">Delete</a>
           </div>
       </form>

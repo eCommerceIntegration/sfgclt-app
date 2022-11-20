@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegUserService } from '../services/reguser-service';
 import { Reguser } from '../model/reguser.model';
-
+enum RegAppName   {
+  House = 'House',
+  Apartment = 'Apartment',
+  Flat = 'Flat',
+  Studio = 'Studio'
+}
 
 @Component({
   selector: 'app-reguser-form',
@@ -14,11 +19,13 @@ export class ReguserFormComponent implements OnInit {
   reguser: Reguser ;
   regusers: Reguser[];
   id: String |null  ;
+  public eregAppName: RegAppName;
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
     private regUserService: RegUserService
+   
   ) {this.reguser = new Reguser(); }
 
   ngOnInit() {
@@ -38,10 +45,17 @@ export class ReguserFormComponent implements OnInit {
   }
     
  
-    onSubmit() {
+  onSubmit() {
       this.regUserService.saveRegUser(this.reguser).subscribe(result => this.gotoRegUserList(this.id));  }
 
-  gotoRegUserList(id:String |null) {
+
+  gotoRegUserSave(id:String){
+        this.regUserService.saveRegUser(this.reguser).subscribe(data => {
+        });
+        this.router.navigate(['/regusers/list']);
+    }
+
+  gotoRegUserList(id:String|null) {
     this.regUserService.listRegUsers(id).subscribe(data => {
       this.regusers = data;
     });

@@ -2,7 +2,7 @@ export class Reguser {
     idApp : String;
     regAppName : String;
     idCountry : String;
-    dUser :  String;
+    idUser :  String;
     regUserName: String;
     regUserStatus :  String;
     regUserFrom :  Date;

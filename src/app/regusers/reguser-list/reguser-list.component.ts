@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { Reguser } from '../model/reguser.model';
 import { RegUserService } from '../services/reguser-service';
 
@@ -12,6 +13,8 @@ export class ReguserListComponent implements OnInit {
   
   regusers: Reguser[];
   reguser: Reguser;
+  id: String;
+
 
   constructor(private regUserService: RegUserService,   
     private route: ActivatedRoute, 
@@ -22,9 +25,10 @@ export class ReguserListComponent implements OnInit {
     this.route.paramMap.subscribe(params =>{
       if (params.has("user.id")) {
         this.regUserService.listRegUsers(params.get("user.id")).subscribe(users =>this.regusers = users);      
-      }else{
-        this.regUserService.deleRegUser(params.get("user.id")).subscribe(user =>this.reguser = user);
       }
+/*       else{
+        this.regUserService.deleRegUser(params.get("user.id")).subscribe(user =>this.reguser = user);
+      } */
     }) 
   }
     gotoRegUserList() {
@@ -34,8 +38,8 @@ export class ReguserListComponent implements OnInit {
       this.router.navigate(['/regusers/list']); */
     }
   
-    gotoRegUserAdd() {
-      this.router.navigate(['/regusers/new']);
+    gotoRegUserAdd(id:String|null){
+      this.router.navigate(["/regusers",id, 'new']);
     }
   
     gotoRegUserEdit(id:String){
@@ -46,7 +50,5 @@ export class ReguserListComponent implements OnInit {
         this.regUserService.deleRegUser(id).subscribe(data => {
         });
     }
-  
-  
   }
   
