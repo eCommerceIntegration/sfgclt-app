@@ -15,12 +15,12 @@
             <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserEdit(reguser.idApp)">Edit Boton</button></td>
             <td><button type="button" class="btn btn-secondary btn-rounded" (click)="gotoRegUserDelete(reguser.idApp)">Delete Boton</button></td>
             <td>{{ reguser.regAppName }}</td>
-            <td>{{ reguser.idCountry }}</td>
+            <td>{{ id == reguser.idCountry }}</td>
             </tr>
         </tbody>
       </table>
       <div class="card-body">
-        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserAdd()">Agregar</a>
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserAdd(id)">Agregar</a>
       </div>
     </div>
     <div class="container">
