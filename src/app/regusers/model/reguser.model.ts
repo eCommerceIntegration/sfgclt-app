@@ -1,4 +1,5 @@
 export class Reguser {
+    id : String;
     idApp : String;
     regAppName : String;
     idCountry : String;
