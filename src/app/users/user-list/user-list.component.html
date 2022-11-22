@@ -12,6 +12,11 @@
           <tr *ngFor="let user of users">
             <td><a href="users/{{ user.id }}/edit">{{ user.id }}</a>Edit URL</td>            
             <td><a href="users/{{ user.id }}/delete">{{ user.id }}</a>Delete URL</td>
+
+<!--             <td>{{ user.id }}</td>            
+            <td>{{ user.id }} </td> -->
+
+
             <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserEdit(user.id)">Edit Boton</button></td>
             <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserDelete(user.id)">Delete Boton</button></td>
             <td>{{ user.firstName }}</td>

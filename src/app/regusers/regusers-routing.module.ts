@@ -5,11 +5,11 @@ import { ReguserListComponent } from '@app/regusers/reguser-list/reguser-list.co
 
 
 const routes: Routes = [
-  { path: 'regusers', component: ReguserListComponent },
-  { path: 'regusers/list', component: ReguserListComponent }, 
-  { path: 'regusers/:user.id/list', component: ReguserListComponent }, 
-  { path: 'regusers/:user.id/new', component: ReguserFormComponent }, 
-  { path: 'regusers/new', component:  ReguserFormComponent  }, 
+  { path: 'regusers', component: ReguserListComponent, pathMatch: 'full' },
+  { path: 'regusers/list', component: ReguserListComponent, pathMatch: 'full' }, 
+  { path: 'regusers/:user.id/list', component: ReguserListComponent, pathMatch: 'full' }, 
+  { path: 'regusers/:user.id/new', component: ReguserFormComponent, pathMatch: 'full' }, 
+  { path: 'regusers/new', component:  ReguserFormComponent , pathMatch: 'full' }, 
   { path: 'regusers/:reguser.id/edit', component: ReguserFormComponent, pathMatch: 'full' }, 
   { path: 'regusers/:reguser.id/delete', component: ReguserFormComponent, pathMatch: 'full' } 
 ];

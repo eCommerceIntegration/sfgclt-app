@@ -40,30 +40,20 @@
         </thead>
         <tbody>
           <tr *ngFor="let reguser of regusers">
-            <td><a href="regusers/{{ reguser.idUser}}/edit">{{ reguser.id }}</a>Edit URL</td>            
+            <td><a href="regusers/{{ reguser.id}}/edit">{{ reguser.id }}</a>Edit URL</td>            
             <td><a href="regusers/{{ reguser.id }}/delete">{{ reguser.id }}</a>Delete URL</td>
             <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserEdit(reguser.id)">Edit Boton</button></td>
-            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.id)">Delete Boton</button></td>
+            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.id,reguser.idUser)">Delete Boton</button></td>
             <td>{{ reguser.idApp }}</td>
             <td>{{ reguser.idApp }}</td>
             <td><a href="mailto:{{ reguser.idCountry }}">{{ reguser.idCountry }}</a></td>
-
+            {{ id == reguser.idCountry }}
           </tr>
         </tbody>
       </table>
       <div class="card-body">
-        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserAdd(id)">Agregar</a>
-          <!-- <button type="button" class="btn btn-primary btn-rounded">Agregar </button> -->
-<!--         <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit(user.id)">Editar</a>
-          <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
-          <button type="button" class="btn btn-success btn-rounded">Success</button>
-          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button> 
-          <a type="button" class="btn btn-success btn-rounded" (click)="gotoUserDelete()">Eliminar</a>
-          <button type="button" class="btn btn-warning btn-rounded">Warning</button>
-          <button type="button" class="btn btn-info btn-rounded">Info</button> -->
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserNew(id)">Agregar</a>
+
       </div>
-    </div>
-    <div class="container">
-      <router-outlet></router-outlet>
     </div>
   </div>

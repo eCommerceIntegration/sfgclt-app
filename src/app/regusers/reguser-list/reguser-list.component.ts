@@ -24,31 +24,36 @@ export class ReguserListComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>{
       if (params.has("user.id")) {
-        this.regUserService.listRegUsers(params.get("user.id")).subscribe(users =>this.regusers = users);      
+        this.regUserService.listRegUsers(params.get("user.id")).subscribe(regusers =>this.regusers = regusers);
+        this.id == params.get("user.id");    
       }
-/*       else{
-        this.regUserService.deleRegUser(params.get("user.id")).subscribe(user =>this.reguser = user);
-      } */
+
     }) 
   }
     gotoRegUserList() {
-/*       this.regUserService.listRegUsers().subscribe(data => {
-        this.regusers = data;
-      });
-      this.router.navigate(['/regusers/list']); */
+      this.router.navigate(["/regusers",this.id, 'list']);
     }
   
-    gotoRegUserAdd(id:String|null){
-      this.router.navigate(["/regusers",id, 'new']);
+    gotoRegUserSave(){
+      this.regUserService.saveRegUser(this.reguser).subscribe(reguser =>this.reguser = reguser);
+      this.router.navigate(["/regusers",this.id, 'list']);
     }
   
     gotoRegUserEdit(id:String){
       this.router.navigate(["/regusers",id, 'edit']);
+      
     }
   
-    gotoRegUserDelete(id:String){
-        this.regUserService.deleRegUser(id).subscribe(data => {
-        });
-    }
+    gotoRegUserDelete(id:String,idUser:String){
+/*         this.regUserService.deleRegUser(id).subscribe(data => {
+        }); */
+        this.regUserService.deleRegUser(id).subscribe(reguser =>this.reguser = reguser);
+        this.router.navigate(["/regusers",idUser, 'list']);
+      }
+
+
+    gotoRegUserNew(id:String){
+      this.router.navigate(["/regusers",1, 'new']);
   }
+}
   

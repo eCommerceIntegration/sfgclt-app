@@ -1,53 +1,60 @@
 <div class="card my-5">
-    <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #userForm="ngForm" id=" reguser" name="reguser"> 
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" id=" reguser" name="reguser"> 
+      <div class="form-group">
+        <div class="form-group">
+          <label for="name">idUser</label>
+          <input type="text" class="form-control"  id="idUser" name="idUser" 
+          placeholder="Enter your idUser" required #idUser="ngModel" [(ngModel)]="reguser.idUser" >
+        </div>
+        <div [hidden]="!reguser.idUser" class="alert alert-danger">idUser is required</div>
+      </div>
+      <div class="form-group">
+        <label for="name">idApp</label>
+        <input type="text" class="form-control"  id="idApp" name="idApp" 
+        placeholder="Enter your idApp" required #idApp="ngModel" [(ngModel)]="reguser.idApp" >
+      </div>
+      <div [hidden]="!reguser.idApp" class="alert alert-danger">idApp is required</div>
+      <div class="form-group">
+        <label for="name">regAppName</label>
+        <input type="text" class="form-control"  id="regAppName" name="regAppName" 
+        placeholder="Enter your regAppName" required #name="ngModel" [(ngModel)]="reguser.regAppName" >
+      </div>
+      <div class="form-group">
+        <label for="name">idCountry</label>
+        <input type="text" class="form-control"  id="idCountry" name="idCountry" 
+        placeholder="Enter your idCountry" required #name="ngModel" [(ngModel)]="reguser.idCountry" >
+      </div>
+      <div [hidden]="!reguser.idCountry" class="alert alert-danger">idCountry is required</div>
+      <div class="form-group">
+        <label for="name">regUserName</label>
+        <input type="text" class="form-control"  id="regUserName" name="regUserName" 
+        placeholder="Enter your regUserName" required #name="ngModel" [(ngModel)]="reguser.regUserName" >
+      </div>
+      <div class="form-group">
+        <label for="name">regUserStatus</label>
+        <input type="text" class="form-control"  id="regUserStatus" name="regUserStatus" 
+        placeholder="Enter your regUserStatus" required #name="ngModel" [(ngModel)]="reguser.regUserStatus" >
+      </div>
+      <div class="form-group">
+        <label for="name">regUserFrom</label>
+        <input type="text" class="form-control"  id="regUserFrom" name="regUserFrom" 
+        placeholder="Enter your regUserFrom" required #name="ngModel" [(ngModel)]="reguser.regUserFrom" >
+      </div>
+      <div class="form-group">
+        <label for="name">regUserTo</label>
+        <input type="text" class="form-control"  id="regUserTo" name="regUserTo" 
+        placeholder="Enter your regUserTo" required #name="ngModel" [(ngModel)]="reguser.regUserTo" >
+      </div>
 
-<!--    
-          debe traer el id del usuario y enviarlo en el subnit
-          como campo obligatorio
-          asi se genera el sabe del comonente reguser que es el id del form]
-          como llebnar los enu: todos son servicios !!
-          <input hidden type="text" [(ngModel)]="{{id}}" 
-            class="form-control" 
-            id="idUser" 
-            name="idUser" 
-            required #name="ngModel"> -->
-<!--         <div class="form-group">
-            <label for="propertyType">Property Type</label>
-            <select id="regAppName" ="regAppName" name="regAppName">
-              <option [ngValue]="null">Select one...</option>
-              <option *ngFor="let regAppName of eregAppName | keyvalue" [ngValue]="regAppName.value">{{regAppName.value}}</option>
-            </select>
-          </div>   -->         
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" [(ngModel)]="reguser.idApp" 
-            class="form-control" 
-            id="idApp" 
-            name="idApp" 
-            placeholder="Enter your name"
-            required #name="ngModel">
+      <div class="card-body">
+        <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Actualizar</button>
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserSave(reguser.id)">Registro</a>
+        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.id)">Delete</a>
         </div>
-        <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
-        <div class="form-group">
-          <label for="regAppName">regAppName</label>
-          <input type="text" [(ngModel)]="reguser.regAppName" 
-            class="form-control" 
-            id="emailPersonal" 
-            name="emailPersonal" 
-            placeholder="Enter your email address"
-            required #email="ngModel">
-          <div [hidden]="!email.pristine" class="alert alert-danger">regAppName is required</div>
-        </div>
-        <div class="card-body">
-          <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Actualizar Sub</button>
-          <!-- <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUser(reguser.idApp)">Add Registro</a> -->
-          <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserSave(reguser.idApp)">Actualizar goto</a>
-          <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUserDelete(reguser.idApp)">Delete</a>
-          </div>
-      </form>
-    </div>
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
+    </form>
   </div>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
