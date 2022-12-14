@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void { this.initialLoad }
 
   initialLoad(){
-    console.log("Initial console.log"); 
+  //  console.log("Initial console.log"); 
   }
 
   constructor(private modalService: NgbModal) {
