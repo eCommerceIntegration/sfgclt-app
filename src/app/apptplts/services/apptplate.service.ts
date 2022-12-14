@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError,map } from 'rxjs/operators';
-import { AppTplt } from '../model/apptplt';
+import { AppTplt } from '../model/apptplate';
 
 /* The @Injectable() decorator defines a class as a service 
 in Angular and allows Angular to inject it into a component as a dependency. 

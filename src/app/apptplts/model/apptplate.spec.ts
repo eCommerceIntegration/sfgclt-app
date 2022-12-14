@@ -1,4 +1,4 @@
-import { Apptplt } from './apptplt';
+import { Apptplt } from './apptplate';
 
 describe('Apptplt', () => {
   it('should create an instance', () => {

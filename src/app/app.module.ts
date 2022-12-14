@@ -10,7 +10,7 @@ import { RegUsersModule } from './regusers/regusers.module';
 import { RegPaysModule } from './regpays/regpays.module';
 import { RegAppsModule } from './regapps/regapps.module';
 import { AppTxtsModule } from './apptxts/apptxts.module';
-import { AppTpltListComponent } from './apptplts/apptplts.module';
+import { AppTpltListComponent } from './apptplts/apptplate.module';
 
 
 import { AppComponent } from './app.component';

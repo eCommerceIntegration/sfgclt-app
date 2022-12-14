@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppTplt } from '../model/apptplt';
-import { AppTpltService } from '../services/apptplt.service';
+import { AppTplt } from '../model/apptplate';
+import { AppTpltService } from '../services/apptplate.service';
 
 @Component({
   selector: 'app-apptplt-list',
