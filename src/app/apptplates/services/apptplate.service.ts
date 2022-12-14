@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError,map } from 'rxjs/operators';
-import { AppTplt } from '../model/apptplate';
+import { AppTplate } from '../model/apptplate';
 
 /* The @Injectable() decorator defines a class as a service 
 in Angular and allows Angular to inject it into a component as a dependency. 
@@ -17,7 +17,7 @@ The injector is the main mechanism. */
   It also helps to make the service tree shakable i.e. 
   remove the service from the final bundle if the app does not use it. */
 })
-export class AppTpltService {
+export class AppTplateService {
   private apptpltsUrl: string;
   // private apptpltUrl: string;
 
@@ -25,30 +25,30 @@ export class AppTpltService {
   this.apptpltsUrl = 'http://127.0.0.1:8080/apptplts';
    }
 
-/*    public listAppTplts(): Observable<AppTplt[]> {
-  return this.http.get<AppTplt[]>(this.apptpltsUrl+"/list");  } */
+/*    public listAppTplates(): Observable<AppTplate[]> {
+  return this.http.get<AppTplate[]>(this.apptpltsUrl+"/list");  } */
 
-  public listAppTplts(): Observable<AppTplt[]> {
-  return this.http.get<AppTplt[]>(this.apptpltsUrl+"/list").pipe(
+  public listAppTplates(): Observable<AppTplate[]> {
+  return this.http.get<AppTplate[]>(this.apptpltsUrl+"/list").pipe(
     retry(1),
     catchError(this.handleError)  );
   }
 
-  public saveAppTplt(apptplt: AppTplt) {
-  return this.http.post<AppTplt>(this.apptpltsUrl+"/new", apptplt);
+  public saveAppTplate(apptplt: AppTplate) {
+  return this.http.post<AppTplate>(this.apptpltsUrl+"/new", apptplt);
    }
   /* llamado a direcciones en apptplts-routing
-   NOPE! const routes: Routes = [ { path: 'apptplts/new', component:  AppTpltFormComponent  }]; 
+   NOPE! const routes: Routes = [ { path: 'apptplts/new', component:  AppTplateFormComponent  }]; 
    en el servicio se hace la peticion Http: Get o Post*/
    
-  public findAppTplt(idAppTplt: String |null) {
-  const findurl = this.apptpltsUrl+"/"+idAppTplt;
-  return this.http.get<AppTplt>(findurl+"/edit")
+  public findAppTplate(idAppTplate: String |null) {
+  const findurl = this.apptpltsUrl+"/"+idAppTplate;
+  return this.http.get<AppTplate>(findurl+"/edit")
   }  
 
-  public deleAppTplt(idAppTplt: String |null): Observable<AppTplt> {
-  const findurl = this.apptpltsUrl+"/"+idAppTplt;
-  return this.http.get<AppTplt>(findurl+"/delete")     
+  public deleAppTplate(idAppTplate: String |null): Observable<AppTplate> {
+  const findurl = this.apptpltsUrl+"/"+idAppTplate;
+  return this.http.get<AppTplate>(findurl+"/delete")     
   }  
 
   handleError(error:Error) {

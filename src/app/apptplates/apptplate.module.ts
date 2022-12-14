@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppTpltRoutingModule } from './apptplate-routing.module';
-import { AppTpltListComponent } from '@app/AppTplts/AppTplt-list/AppTplt-list.component';
-import { AppTpltFormComponent } from '@app/AppTplts/AppTplt-form/AppTplt-form.component';
-import { ApptpltsComponent } from './apptplate/apptplate.component';
+import { AppTplatetRoutingModule } from './apptplate-routing.module';
+import { AppTplateListComponent } from '@app/apptplates/apptplate-list/apptplate-list.component';
+import { AppTplateFormComponent } from '@app/apptplates/apptplate-form/apptplate-form.component';
+import { AppTplateComponent } from './apptplate/apptplate.component';
 
 /* An NgModule is a class marked by the @NgModule decorator. 
 @NgModule takes a metadata object that describes how to compile a component's 
@@ -15,15 +15,15 @@ template and how to create an injector at runtime.
 
 @NgModule({
   declarations: [
-    AppTpltListComponent,
-    AppTpltFormComponent,
-    ApptpltsComponent 
+    AppTplateListComponent,
+    AppTplateFormComponent,
+    AppTplateComponent 
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AppTpltRoutingModule
+    AppTplatetRoutingModule
   ]
 })
-export class AppTpltsModule { }
+export class AppTplateModule { }
