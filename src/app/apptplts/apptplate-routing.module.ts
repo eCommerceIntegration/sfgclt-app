@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppTpltListComponent } from '@app/apptplts/apptplate-list/apptplt-list.component';
-import { AppTpltFormComponent } from '@app/apptplts/apptplate-form/apptplt-form.component';
+import { AppTpltListComponent } from '@app/apptplts/apptplate-list/apptplate-list.component';
+import { AppTpltFormComponent } from '@app/apptplts/apptplate-form/apptplate-form.component';
 
 const routes: Routes = [
   { path: 'apptplts', component: AppTpltListComponent },

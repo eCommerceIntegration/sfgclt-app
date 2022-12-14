@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppTpltListComponent } from './apptplt-list.component';
+import { ApptpltsFormComponent } from './apptplate-form.component';
 
-describe('ApptpltsListComponent', () => {
-  let component: AppTpltListComponent;
-  let fixture: ComponentFixture<AppTpltListComponent>;
+describe('ApptpltsFormComponent', () => {
+  let component: ApptpltsFormComponent;
+  let fixture: ComponentFixture<ApptpltsFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppTpltListComponent ]
+      declarations: [ ApptpltsFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AppTpltListComponent);
+    fixture = TestBed.createComponent(ApptpltsFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

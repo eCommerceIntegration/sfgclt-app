@@ -7,7 +7,7 @@ import { ReguserListComponent } from '@app/regusers/reguser-list/reguser-list.co
 import { RegpayListComponent } from '@app/regpays/regpay-list/regpay-list.component';
 import { RegAppListComponent } from '@app/regapps/regapp-list/regapp-list.component';
 import { AppTxtListComponent } from '@app/apptxts/apptxt-list/apptxt-list.component';
-import { AppTpltListComponent } from '@app/apptplts/apptplate-list/apptplt-list.component';
+import { AppTpltListComponent } from '@app/apptplts/apptplate-list/apptplate-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home' , pathMatch: 'full' },
