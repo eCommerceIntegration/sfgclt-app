@@ -14,24 +14,32 @@ export class RegUserService {
     this.regusersUrl = 'http://127.0.0.1:8080/regusers';
    }
 
+   public findRegUser(idRegUser: String |null) {
+    const findurl = this.regusersUrl+"/"+idRegUser;
+    return this.http.get<Reguser>(findurl+"/edit")}  
+
+   public findRegUserByIdUser(idUser: String |null) {
+    const findurl = this.regusersUrl+"/"+idUser;
+    return this.http.get<Reguser>(findurl+"/usedit")}  
+   
    public listRegUsers(idUser: String |null): Observable<Reguser[]> {
     const findurl = this.regusersUrl+"/"+idUser;
+    return this.http.get<Reguser[]>(findurl+"/list")  ;  }  
+
+ 
+  public listRegUsersAll(): Observable<Reguser[]> {
+    const findurl = this.regusersUrl;
     return this.http.get<Reguser[]>(findurl+"/list")  ;  }  
 
 
   public saveRegUser(reguser: Reguser) {
     return this.http.post<Reguser>(this.regusersUrl+"/new", reguser); }
 
-  public findRegUser(idRegUser: String |null) {
-    const findurl = this.regusersUrl+"/"+idRegUser;
-    return this.http.get<Reguser>(findurl+"/edit")}  
- 
-  
   public deleRegUser(idRegUser: String |null){
     const findurl = this.regusersUrl+"/"+idRegUser;
-    return this.http.get<Reguser>(findurl+"/delete") 
-    
-        
+    return this.http.get<Reguser>(findurl+"/delete")         
   }  
 
+  public saveRegUserUser(reguser: Reguser) {
+    return this.http.post<Reguser>(this.regusersUrl+"/new", reguser); }
 }

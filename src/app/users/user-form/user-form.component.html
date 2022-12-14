@@ -1,80 +1,72 @@
-<!-- <div class="container-fluid py-3">
-    <div class="row my-3">
-      <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">        
+       <div class="col-md-12">
+      <div class="card">
+          <div class="card-header card-header-danger">
+              <table class="table"  >
+              <tbody>
+              <div class="main-content">
+                  <div class="card-header card-header-danger" >
+                  <h4 class="card-title">USUARIOS.</h4>
+                  <p class="card-category"> Registro de Usuarios</p></div>
+              </div> 
+          </tbody>
+      </table>    
+      </div>    
       </div>
-    </div>
-    <div class="row my-3">
-      <div class="col">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-    </div>
-    <div class="row my-3">
-      <div class="col">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-        </div>
-      </div>
-    </div> -->
-    <!-- <div class="row my-3">
-      <div class="col">
-        <button class="btn btn-sm btn-outline-primary" (click)="open(demoModal)">Launch demo modal</button>
-      </div>
-    </div> 
-  </div>-->
-
-<!--   <ng-template #demoModal let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <label for="dateOfBirth">Date of birth</label>
-          <div class="input-group">
-            <input id="dateOfBirth" name="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" ngbDatepicker #dp="ngbDatepicker">
-            <button type="button" class="btn btn-outline-secondary bi bi-calendar" (click)="dp.toggle()"></button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    </div>
-  </ng-template> -->
-
-<div class="card my-5">
+  </div> 
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #userForm="ngForm" id=" user" name="user"> 
+
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" id="user" name="user"> 
+      <input type="hidden" id="id" name="id" [(ngModel)]="user.id" >
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="user.firstName" 
-          class="form-control" 
-          id="firstName" 
-          name="firstName" 
-          placeholder="Enter your name"
-          required #name="ngModel">
+        <label for="name">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName"   placeholder="Enter your name"
+        required #firstName="ngModel" [(ngModel)]="user.firstName" >
+        <small id="firstNamelHelp" class="form-text text-muted">First name is require.</small>
       </div>
-      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+
+
+      <div class="form-group">
+        <label for="name">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName"   placeholder="Enter your lastName"
+        required #lastName="ngModel" [(ngModel)]="user.lastName" >
+        <small id="lastNameHelp" class="form-text text-muted">Last name is require.</small>
+      </div>
+    
+      <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"   placeholder="Enter your phone number"
+        [(ngModel)]="user.phoneNumber" >
+        <small id="phonelHelp" class="form-text text-muted">Wasapp phone number.</small>
+      </div>
+    
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" [(ngModel)]="user.emailPersonal" 
-          class="form-control" 
-          id="emailPersonal" 
-          name="emailPersonal" 
-          placeholder="Enter your email address"
-          required #email="ngModel">
-        <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+        <input type="text" class="form-control" id="emailAddress"  name="emailAddress"  placeholder="Enter your email address"
+        required #emailAddress="ngModel" [(ngModel)]="user.emailAddress"   >    
+        <small id="phonelHelp" class="form-text text-muted">Valid email is mandadory</small>
       </div>
-      <div class="card-body">
-        <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Actualizar</button>
-        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoRegUser(user.id)">Registro</a>
-        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoUserDelete(user.id)">Delete</a>
+      <div></div>
+      <hr> 
+      <div id="Botonera" class="container-fluid">
+        <div class="row">        
+        <div class="card">
+            <div class="card-header card-header-danger">
+              <table class="table"  >
+                    <button type="submit"  class="btn btn-primary btn-rounded" 
+                    [disabled]="!userForm.form.valid">Actualizar</button>
+                    <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoRegUser(user.id)">Registro</a>
+                    <a type="button" class="btn btn-danger btn-rounded" (click)="gotoUserDelete(user.id)">Delete</a>
+                    <a type="button" class="btn btn-success btn-rounded" (click)="gotoUserList()">Back</a>                
+              </table>    
+            </div>    
         </div>
+        </div>
+      </div> 
+
     </form>
   </div>
   <div class="container">
@@ -82,4 +74,3 @@
   </div>
 </div>
 
-  

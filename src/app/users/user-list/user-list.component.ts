@@ -9,30 +9,50 @@ import { UserService } from '../services/user-service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
   users: User[];
   user: User;
-
+  errorMessage = "";
+  repos: User[];
+  repo:User;
+ 
   constructor(private userService: UserService,   
     private route: ActivatedRoute, 
     private router: Router ) { 
    }
+ngOnInit() {
 
-  ngOnInit() {
-  //this.userService.listUsers().subscribe(users =>this.users = users);
- 
   this.route.paramMap.subscribe(params =>{
     if (params.has("user.id")) {
-      this.userService.deleUser(params.get("user.id")).subscribe(user =>this.user = user);
-    }else{
-      this.userService.listUsers().subscribe(users =>this.users = users);
-    }
-  }) 
-}
+      this.userService.findUser(params.get("user.id"))
+      .subscribe(
+        (response) => { this.user = response;
+        },
+        (error) => {   this.errorMessage = error;
+
+        }
+      )
+
+   //   this.router.navigate(["/users",this.user.id, 'edit']);
+    }else{ 
+      this.userService.listUsers()
+      .subscribe(
+        (response) => {  this.users = response;
+        },
+        (error) => {     this.errorMessage = error;
+        }
+      )
+     }
+  }
+  )
+} 
+
   gotoUserList() {
-    this.userService.listUsers().subscribe(data => {
-      this.users = data;
-    });
+    this.userService.listUsers()
+    .subscribe(
+      (response) => {     },
+      (error) => {   this.errorMessage = error;  
+      }
+    );
     this.router.navigate(['/users/list']);
   }
 
@@ -44,17 +64,14 @@ export class UserListComponent implements OnInit {
     this.router.navigate(["/users",id, 'edit']);
   }
 
-/*   gotoUserDelete(id:String){
-    this.router.navigate(["/users",id,'delete']);
-  } */
-
   gotoUserDelete(id:String){
-
- //    this.userService.deleUser(id).then (() => this.router.navigate(['/users/list']));
-      this.userService.deleUser(id).subscribe(data => {
-      });
-//      this.router.navigate(['/users/list']);
-  }
-
-
+      this.userService.deleUser(id)
+      .subscribe(
+        (response) => {  this.user = response;
+        },
+        (error) => {     this.errorMessage = error;   
+        }
+      );
+      this.router.navigate(['/users/list']);
+    }
 }

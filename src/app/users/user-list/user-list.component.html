@@ -1,44 +1,68 @@
-<div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">        
+        <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <table class="table"  >
+                <tbody>
+                <div class="main-content">
+                    <div class="card-header card-header-danger" >
+                    <h4 class="card-title">USUARIOS.</h4>
+                    <p class="card-category"> Actualizacion de Usuarios</p></div>
+                    <div *ngIf="errorMessage" class="alert alert-warning">
+                        <!-- si el mensaje es cierto entonces aplico el tah HTML neste caso un div -->
+                    <strong>Warning!</strong> {{errorMessage | json}} </div>
+                </div> 
+            </tbody>
+        </table>    
+        </div>    
+        </div>
+        </div>
+    </div>                      
+    <div class="row">        
+    <div class="col-md-12">
+    <div class="card">
+    <div class="card-header card-header-danger">
+        <table class="table" >
+        <thead class=" text-primary">
+        <tr>
+            <!-- The scope attribute specifies whether a header cell is a header for a column, row, or group of columns or rows.
+            Note: The scope attribute has no visual effect in ordinary web browsers, but can be used by screen readers.  -->
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone</th>
             <th scope="col">Email</th>
-          </tr>
+            <th i class="bi bi-pen"></th>
+            <th i class="bi bi-trash3" scope="col"></th>
+        </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users">
-            <td><a href="users/{{ user.id }}/edit">{{ user.id }}</a>Edit URL</td>            
-            <td><a href="users/{{ user.id }}/delete">{{ user.id }}</a>Delete URL</td>
-
-<!--             <td>{{ user.id }}</td>            
-            <td>{{ user.id }} </td> -->
-
-
-            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserEdit(user.id)">Edit Boton</button></td>
-            <td><button type="button" class="btn btn-primary btn-rounded" (click)="gotoUserDelete(user.id)">Delete Boton</button></td>
+        <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
-            <td><a href="mailto:{{ user.emailPersonal }}">{{ user.emailPersonal }}</a></td>
-
-          </tr>
+            <td>{{ user.phoneNumber }}</td>
+            <td><a href="mailto:{{ user.emailAddress }}">{{ user.emailAddress }}</a></td>
+            <td><a i class="bi bi-pen" href="users/{{ user.id }}/edit"></a></td>            
+            <td><a i class="bi bi-trash3" href="users/{{ user.id }}/delete"></a></td>
+        </tr>
         </tbody>
-      </table>
-      <div class="card-body">
-        <a type="button" class="btn btn-primary btn-rounded" (click)="gotoUserAdd()">Agregar</a>
-          <!-- <button type="button" class="btn btn-primary btn-rounded">Agregar </button> -->
-<!--         <a type="button" class="btn btn-secondary btn-rounded" (click)="gotoUserEdit(user.id)">Editar</a>
-          <button type="button" class="btn btn-secondary btn-rounded">Modificary</button>
-          <button type="button" class="btn btn-success btn-rounded">Success</button>
-          <button type="button" class="btn btn-danger btn-rounded">Eiminar</button> 
-          <a type="button" class="btn btn-success btn-rounded" (click)="gotoUserDelete()">Eliminar</a>
-          <button type="button" class="btn btn-warning btn-rounded">Warning</button>
-          <button type="button" class="btn btn-info btn-rounded">Info</button> -->
-      </div>
+        </table>
+        </div>
+            <div class="card-body" >
+            <a  class="btn btn-primary btn-rounded"  (click)="gotoUserAdd()">New Record</a>
+        </div>
     </div>
-    <div class="container">
-      <router-outlet></router-outlet>
     </div>
-  </div>
+    </div>
+    </div>
+</div> 
+    
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+  
