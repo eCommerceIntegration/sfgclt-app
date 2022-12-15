@@ -30,7 +30,7 @@
           <!-- The scope attribute specifies whether a header cell is a header for a column, row, or group of columns or rows.
           Note: The scope attribute has no visual effect in ordinary web browsers, but can be used by screen readers.  -->
           <th scope="col">Id</th>
-          <th scope="col">Apptplatename</th>
+          <th scope="col">appTplateName</th>
           <th i class="bi bi-pen"></th>
           <th i class="bi bi-trash3" scope="col"></th>
       </tr>
@@ -38,7 +38,7 @@
       <tbody>
       <tr *ngFor="let apptplate of apptplates">
           <td>{{ apptplate.id }}</td>
-          <td>{{ apptplate.apptplatename }}</td>
+          <td>{{ apptplate.appTplateName }}</td>
           <td><a i class="bi bi-pen" href="apptplates/{{ apptplate.id }}/edit"></a></td>            
           <td><a i class="bi bi-trash3" href="apptplates/{{ apptplate.id }}/delete"></a></td>
       </tr>

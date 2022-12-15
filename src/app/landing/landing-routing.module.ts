@@ -8,6 +8,7 @@ import { RegpayListComponent } from '@app/regpays/regpay-list/regpay-list.compon
 import { RegAppListComponent } from '@app/regapps/regapp-list/regapp-list.component';
 import { AppTxtListComponent } from '@app/apptxts/apptxt-list/apptxt-list.component';
 import { AppTplateListComponent } from '@app/apptplates/apptplate-list/apptplate-list.component';
+import { AppOptListComponent } from '@app/appopts/appopt-list/appopt-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home' , pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'regapps',  component: RegAppListComponent },
   { path: 'apptxts',  component: AppTxtListComponent },
   { path: 'apptplts',  component: AppTplateListComponent }
+  { path: 'appopts',  component: AppOptListComponent }
 ];
 
 @NgModule({

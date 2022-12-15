@@ -22,7 +22,7 @@ export class AppTplateService {
   // private apptpltUrl: string;
 
   constructor(private http: HttpClient) {
-  this.apptpltsUrl = 'http://127.0.0.1:8080/apptplts';
+  this.apptpltsUrl = 'http://127.0.0.1:8080/apptplates';
    }
 
 /*    public listAppTplates(): Observable<AppTplate[]> {
