@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppOptRoutingModule } from './appopts-routing.module';
+import { AppOptsComponent } from './appopts/appopts.component';
+import { AppOptFormComponent } from './appopt-form/appopt-form.component';
+import { AppOptListComponent } from './appopt-list/appopt-list.component'
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AppOptsComponent,
+    AppOptListComponent,
+    AppOptFormComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppOptRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
-export class AppoptsModule { }
+export class AppOptModule { }

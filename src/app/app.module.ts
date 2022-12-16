@@ -11,6 +11,7 @@ import { RegPaysModule } from './regpays/regpays.module';
 import { RegAppsModule } from './regapps/regapps.module';
 import { AppTxtsModule } from './apptxts/apptxts.module';
 import { AppTplateModule } from './apptplates/apptplate.module';
+import { AppOptModule } from './appopts/appopts.module';
 
 
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { RegPayService } from './regpays/services/regpay.service';
 import { RegAppService } from './regapps/services/regapp.service';
 import { AppTxtService } from './apptxts/services/apptxt.service';
 import { AppTplateService } from './apptplates/services/apptplate.service';
+import { AppOptService } from './appopts/services/appopt.service';
 
 import { GlobalHttpInterceptorService } from './apptplates/services/GlobalHttpInterceptorService';
 
@@ -51,9 +53,10 @@ import { GlobalHttpInterceptorService } from './apptplates/services/GlobalHttpIn
     RegPaysModule,
     RegAppsModule,
     AppTxtsModule,
-    AppTplateModule   
+    AppTplateModule,
+    AppOptModule   
   ],
-  providers: [UserService,RegUserService,RegPayService,RegAppService,AppTxtService,AppTplateService,
+  providers: [UserService,RegUserService,RegPayService,RegAppService,AppTxtService,AppTplateService,AppOptService,
   { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

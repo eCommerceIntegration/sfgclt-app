@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'regpays',  component: RegpayListComponent },
   { path: 'regapps',  component: RegAppListComponent },
   { path: 'apptxts',  component: AppTxtListComponent },
-  { path: 'apptplts',  component: AppTplateListComponent }
+  { path: 'apptplts',  component: AppTplateListComponent },
   { path: 'appopts',  component: AppOptListComponent }
 ];
 

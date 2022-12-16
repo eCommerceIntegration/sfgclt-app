@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppOptListComponent } from '@app/appopts/appopt-list/appopt-list.component';
 import { AppOptFormComponent } from '@app/appopts/appopt-form/appopt-form.component';
-import { AppOptListComponent } from '@app/appopts/appopt-list/appopt-list.component';
+
 
 const routes: Routes = [
   { path: 'appopts', component: AppOptListComponent },
@@ -24,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppOptsRoutingModule { }
+export class AppOptRoutingModule { }
