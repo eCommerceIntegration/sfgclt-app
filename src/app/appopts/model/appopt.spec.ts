@@ -1,7 +1,7 @@
-import { Appopt } from './appopt';
+import { AppOpt } from './appopt';
 
 describe('Appopt', () => {
   it('should create an instance', () => {
-    expect(new Appopt()).toBeTruthy();
+    expect(new AppOpt()).toBeTruthy();
   });
 });

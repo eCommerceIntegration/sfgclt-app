@@ -32,16 +32,16 @@ export class AppOptService {
     return this.http.get<AppOpt[]>(findurl+"/list")  ;  }  
 
 
-  public saveAppOpt(apptxt: AppOpt) {
-    return this.http.post<AppOpt>(this.appoptsUrl+"/new", apptxt); }
+  public saveAppOpt(appopt: AppOpt) {
+    return this.http.post<AppOpt>(this.appoptsUrl+"/new", appopt); }
 
   public deleAppOpt(idAppOpt: String |null){
     const findurl = this.appoptsUrl+"/"+idAppOpt;
     return this.http.get<AppOpt>(findurl+"/delete")         
   }  
 
-  public saveAppOptUser(apptxt: AppOpt) {
-    return this.http.post<AppOpt>(this.appoptsUrl+"/new", apptxt); }
+  public saveAppOptUser(appopt: AppOpt) {
+    return this.http.post<AppOpt>(this.appoptsUrl+"/new", appopt); }
 
 
 

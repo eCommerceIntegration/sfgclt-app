@@ -54,42 +54,46 @@ export class AppOptFormComponent implements OnInit {
       const archivoCapturado = event.target.files[0]
       this.extraerBase64(archivoCapturado).then((imagen: any) => {
         this.imgSrc = imagen.base;
-        console.log(imagen);
-  
-      })
+    //    console.log(imagen);
+    })
       this.archivos.push(archivoCapturado)
       // 
-      // console.log(event.target.files);
-  
+      // console.log(event.target.files); 
     }
 
-    clearFie(): any {
+    clearFile(): any {
       this.imgSrc = '';
       this.archivos = [];
     }
 
     upLoadFile(): any {
+      console.log('Respuesta del servidor');
       try {
         this.loading = true;
         const formularioDeDatos = new FormData();
         this.archivos.forEach((archivo: string | Blob) => {
           formularioDeDatos.append('files', archivo)
+                 this.loading = false;
         })
         // formularioDeDatos.append('_id', 'MY_ID_123')
-        this.appOptService.postImage(`http://localhost:3001/upload`, formularioDeDatos)
+/*        this.appOptService.postImage(`http://localhost:3001/upload`, formularioDeDatos)
           .subscribe(res => {
             this.loading = false;
-            console.log('Respuesta del servidor', res);
+        //    console.log('Respuesta del servidor', res);
   
           }, () => {
             this.loading = false;
             alert('Error');
           })
-      } catch (e) {
+                this.appopt.optSrcIcon = this.archivos;
+ */     } catch (e) {
         this.loading = false;
-        console.log('ERROR', e);
+      //
+      this.appopt.optSrcIcon = this.archivos;
+      console.log('ERROR', e);
   
-      }
+      } 
+      this.appopt.optSrcIcon = this.archivos;
     }
 
     extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {

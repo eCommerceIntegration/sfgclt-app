@@ -21,7 +21,7 @@
         </div>  
   
     <div class="card-body">   
-      <form (ngSubmit)="onSubmit()" #appoptForm="ngForm" id="appopt" name="appopt"> 
+      <form (ngSubmit)="onSubmit()" #appoptForm="ngForm" id="appopt" name="appopt" enctype="multipart/form-data"> 
   
         <div class="row">
           <div class="col">
@@ -92,19 +92,19 @@
     
           <div class="col" >
             <label for="name">optSrcImg</label>
-            <input type="file" (change)="catchFile($event)" class="form-control"  id="optSrcImg" name="optSubTitle" 
+            <input type="file" (change)="catchFile($event)" class="form-control"  id="optSrcImg" name="optSrcImg" 
             placeholder="Enter your optSrcImg" required #optSrcImg="ngModel" [(ngModel)]="appopt.optSrcImg" >
           </div>
         </div>
 
         <div class="row">
           <div class="col" *ngIf="imgSrc" width="1px" height="2px">
-            <button class="clear-image" type="button" (click)="clearFie()">Clear</button>
+            <button class="clear-image" type="button" (click)="clearFile()">Clear</button>
             <img  [src]="imgSrc" alt="">
           </div>
           <div class="col" *ngIf="imgSrc">
-            <button type="button" class="button" [disabled]="imgSrc" (click)="upLoadFile()">
-                {{(imgSrc) ? 'Cargando.....' : 'Subir Archivo'}}
+            <button type="button" class="button" [disabled]="loading" (click)="upLoadFile()">
+                {{(loading) ? 'Cargando.....' : 'Subir Archivo'}}
             </button>
           </div>
         </div>		
@@ -118,14 +118,14 @@
             </div>  
           <div class="col">
             <label for="name">optSrcIcon</label>
-            <input type="file" (change)="catchFile($event)" class="form-control"  id="optSrcIcon" name="optSubTitle" 
+            <input type="file" (change)="catchFile($event)" class="form-control"  id="optSrcIcon" name="optSrcIcon" 
             placeholder="Enter your optSrcIcon" required #optSrcIcon="ngModel" [(ngModel)]="appopt.optSrcIcon" >
           </div>
         </div>	
 
         <div class="row">
           <div class="col" *ngIf="icoSrc">
-              <button class="clear-image" type="button" (click)="clearFie()">Clear</button>
+              <button class="clear-image" type="button" (click)="clearFile()">Clear</button>
               <img  [src]="icoSrc" alt="">
           </div>
           <div class="col" size="100px" *ngIf="imgSrc">
