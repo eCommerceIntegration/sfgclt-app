@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppOptFormComponent } from '../appopts/appopt-form/appopt-form.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppuploadRoutingModule } from './appupload-routing.module';
-import { UploadFilesComponent } from './upload-files/upload-files.component';
+import { AppUploadFormComponent } from './appupload-form/appupload-form.component';
 
 
 @NgModule({
   declarations: [
-    AppOptFormComponent,
-    UploadFilesComponent
+    AppUploadFormComponent,
   ],
   imports: [
     CommonModule,
@@ -22,4 +18,4 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
 
   ]
 })
-export class AppuploadModule { }
+export class AppUploadModule { }

@@ -15,6 +15,7 @@ import { AppOptsModule } from './appopts/appopts.module';
 import { AppModsModule } from './appmods/appmods.module';
 import { AppImgsModule } from './appimgs/appimgs.module';
 import { AppAgreesModule } from './appagrees/appagrees.module';
+import { AppUploadModule } from './appupload/appupload.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './landing/navbar/navbar.component';
@@ -29,9 +30,10 @@ import { RegAppService } from './regapps/services/regapp.service';
 import { AppTxtService } from './apptxts/services/apptxt.service';
 import { AppTplateService } from './apptplates/services/apptplate.service';
 import { AppOptService } from './appopts/services/appopt.service';
-import { AppAgreeService } from './appagrees/services/appagree.service';
 import { AppModService } from './appmods/services/appmod.service';
 import { AppImgService } from './appimgs/services/appimg.service';
+import { AppAgreeService } from './appagrees/services/appagree.service';
+import { AppUploadService } from './appupload/services/appupload.service';
 
 import { GlobalHttpInterceptorService } from './services/GlobalHttpInterceptorService';
 
@@ -64,10 +66,11 @@ import { GlobalHttpInterceptorService } from './services/GlobalHttpInterceptorSe
     AppOptsModule,
     AppModsModule,
     AppImgsModule,
-    AppAgreesModule   
+    AppAgreesModule,
+    AppUploadModule   
   ],
   providers: [UserService,RegUserService,RegPayService,RegAppService,AppTxtService,
-              AppTplateService,AppOptService,AppModService,AppImgService,AppAgreeService,
+              AppTplateService,AppOptService,AppModService,AppImgService,AppAgreeService,AppUploadService,
   { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

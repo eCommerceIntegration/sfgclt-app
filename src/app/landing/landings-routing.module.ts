@@ -12,6 +12,7 @@ import { AppOptListComponent } from '@app/appopts/appopt-list/appopt-list.compon
 import { AppModListComponent } from '@app/appmods/appmod-list/appmod-list.component';
 import { AppImgListComponent } from '@app/appimgs/appimg-list/appimg-list.component';
 import { AppAgreeListComponent } from '@app/appagrees/appagree-list/appagree-list.component';
+import { AppAgreeListComponent } from '@app/appuploads/appupload-form/appupload-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home' , pathMatch: 'full' },
