@@ -1,8 +1,5 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppOpt } from '../model/appopt';
 import { AppOptService } from '../services/appopt.service';
 

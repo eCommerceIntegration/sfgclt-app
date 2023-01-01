@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppoptFormComponent } from './appopt-form.component';
+import { AppOptFormComponent } from './appopt-form.component';
 
 describe('AppoptFormComponent', () => {
-  let component: AppoptFormComponent;
-  let fixture: ComponentFixture<AppoptFormComponent>;
+  let component: AppOptFormComponent;
+  let fixture: ComponentFixture<AppOptFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppoptFormComponent ]
+      declarations: [ AppOptFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AppoptFormComponent);
+    fixture = TestBed.createComponent(AppOptFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

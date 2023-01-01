@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppTplatetRoutingModule } from './apptplate-routing.module';
+import { AppTplatetRoutingModule } from './apptplates-routing.module';
 import { AppTplateListComponent } from '@app/apptplates/apptplate-list/apptplate-list.component';
 import { AppTplateFormComponent } from '@app/apptplates/apptplate-form/apptplate-form.component';
 import { AppTplateComponent } from './apptplate/apptplate.component';
@@ -26,4 +26,4 @@ template and how to create an injector at runtime.
     AppTplatetRoutingModule
   ]
 })
-export class AppTplateModule { }
+export class AppTplatesModule { }

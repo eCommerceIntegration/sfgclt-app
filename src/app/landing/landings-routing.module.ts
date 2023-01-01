@@ -9,6 +9,9 @@ import { RegAppListComponent } from '@app/regapps/regapp-list/regapp-list.compon
 import { AppTxtListComponent } from '@app/apptxts/apptxt-list/apptxt-list.component';
 import { AppTplateListComponent } from '@app/apptplates/apptplate-list/apptplate-list.component';
 import { AppOptListComponent } from '@app/appopts/appopt-list/appopt-list.component';
+import { AppModListComponent } from '@app/appmods/appmod-list/appmod-list.component';
+import { AppImgListComponent } from '@app/appimgs/appimg-list/appimg-list.component';
+import { AppAgreeListComponent } from '@app/appagrees/appagree-list/appagree-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home' , pathMatch: 'full' },
@@ -20,7 +23,10 @@ const routes: Routes = [
   { path: 'regapps',  component: RegAppListComponent },
   { path: 'apptxts',  component: AppTxtListComponent },
   { path: 'apptplts',  component: AppTplateListComponent },
-  { path: 'appopts',  component: AppOptListComponent }
+  { path: 'appopts',  component: AppOptListComponent },
+  { path: 'appmods',  component: AppModListComponent },
+  { path: 'appimgs',  component: AppImgListComponent },
+  { path: 'appagrees',  component: AppAgreeListComponent }
 ];
 
 @NgModule({

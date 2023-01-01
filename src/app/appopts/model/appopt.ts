@@ -7,8 +7,8 @@ export class AppOpt {
     optValTo: String;
     optTitle: String;
     optSubTitle: String;
-    optSrcImg: String|Blob;
+    optSrcImg: File;
     optTitleImg: String;
-    optSrcIcon: String|Blob;
+    optSrcIcon: File;
     optTitleIcon: String;
 }

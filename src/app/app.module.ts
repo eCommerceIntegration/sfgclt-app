@@ -4,15 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { LandingModule } from './landing/landing.module';
+import { LandingModule } from './landing/landings.module';
 import { UsersModule } from './users/users.module';
 import { RegUsersModule } from './regusers/regusers.module';
 import { RegPaysModule } from './regpays/regpays.module';
 import { RegAppsModule } from './regapps/regapps.module';
 import { AppTxtsModule } from './apptxts/apptxts.module';
-import { AppTplateModule } from './apptplates/apptplate.module';
-import { AppOptModule } from './appopts/appopts.module';
-
+import { AppTplatesModule } from './apptplates/apptplates.module';
+import { AppOptsModule } from './appopts/appopts.module';
+import { AppModsModule } from './appmods/appmods.module';
+import { AppImgsModule } from './appimgs/appimgs.module';
+import { AppAgreesModule } from './appagrees/appagrees.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './landing/navbar/navbar.component';
@@ -27,8 +29,13 @@ import { RegAppService } from './regapps/services/regapp.service';
 import { AppTxtService } from './apptxts/services/apptxt.service';
 import { AppTplateService } from './apptplates/services/apptplate.service';
 import { AppOptService } from './appopts/services/appopt.service';
+import { AppAgreeService } from './appagrees/services/appagree.service';
+import { AppModService } from './appmods/services/appmod.service';
+import { AppImgService } from './appimgs/services/appimg.service';
 
-import { GlobalHttpInterceptorService } from './apptplates/services/GlobalHttpInterceptorService';
+import { GlobalHttpInterceptorService } from './services/GlobalHttpInterceptorService';
+
+
 
 
 
@@ -53,10 +60,14 @@ import { GlobalHttpInterceptorService } from './apptplates/services/GlobalHttpIn
     RegPaysModule,
     RegAppsModule,
     AppTxtsModule,
-    AppTplateModule,
-    AppOptModule   
+    AppTplatesModule,
+    AppOptsModule,
+    AppModsModule,
+    AppImgsModule,
+    AppAgreesModule   
   ],
-  providers: [UserService,RegUserService,RegPayService,RegAppService,AppTxtService,AppTplateService,AppOptService,
+  providers: [UserService,RegUserService,RegPayService,RegAppService,AppTxtService,
+              AppTplateService,AppOptService,AppModService,AppImgService,AppAgreeService,
   { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

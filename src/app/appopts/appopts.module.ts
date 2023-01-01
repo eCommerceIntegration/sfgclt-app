@@ -21,4 +21,4 @@ import { AppOptListComponent } from './appopt-list/appopt-list.component'
     ReactiveFormsModule
   ]
 })
-export class AppOptModule { }
+export class AppOptsModule { }
