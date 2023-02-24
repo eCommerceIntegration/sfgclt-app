@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { LandingModule } from './landing/landings.module';
+import { LandingModule } from './landings/landings.module';
 import { UsersModule } from './users/users.module';
 import { RegUsersModule } from './regusers/regusers.module';
 import { RegPaysModule } from './regpays/regpays.module';
@@ -15,13 +15,13 @@ import { AppOptsModule } from './appopts/appopts.module';
 import { AppModsModule } from './appmods/appmods.module';
 import { AppImgsModule } from './appimgs/appimgs.module';
 import { AppAgreesModule } from './appagrees/appagrees.module';
-import { AppUploadModule } from './appupload/appupload.module';
+import { AppUploadModule } from './appuploads/appupload.module';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './landing/navbar/navbar.component';
-import { BodyComponent } from './landing/body/body.component';
-import { FooterComponent } from './landing/footer/footer.component';
-import { HeaderComponent } from './landing/header/header.component';
+import { NavbarComponent } from './landings/navbar/navbar.component';
+import { BodyComponent } from './landings/body/body.component';
+import { FooterComponent } from './landings/footer/footer.component';
+import { HeaderComponent } from './landings/header/header.component';
 
 import { UserService } from './users/services/user-service';
 import { RegUserService } from './regusers/services/reguser-service';
@@ -33,7 +33,7 @@ import { AppOptService } from './appopts/services/appopt.service';
 import { AppModService } from './appmods/services/appmod.service';
 import { AppImgService } from './appimgs/services/appimg.service';
 import { AppAgreeService } from './appagrees/services/appagree.service';
-import { AppUploadService } from './appupload/services/appupload.service';
+import { AppUploadService } from './appuploads/services/appupload.service';
 
 import { GlobalHttpInterceptorService } from './services/GlobalHttpInterceptorService';
 

@@ -12,7 +12,7 @@ import { AppOptListComponent } from '@app/appopts/appopt-list/appopt-list.compon
 import { AppModListComponent } from '@app/appmods/appmod-list/appmod-list.component';
 import { AppImgListComponent } from '@app/appimgs/appimg-list/appimg-list.component';
 import { AppAgreeListComponent } from '@app/appagrees/appagree-list/appagree-list.component';
-import { AppAgreeListComponent } from '@app/appuploads/appupload-form/appupload-list.component';
+import { AppUploadFormComponent } from '@app/appuploads/appupload-form/appupload-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home' , pathMatch: 'full' },
@@ -27,7 +27,9 @@ const routes: Routes = [
   { path: 'appopts',  component: AppOptListComponent },
   { path: 'appmods',  component: AppModListComponent },
   { path: 'appimgs',  component: AppImgListComponent },
-  { path: 'appagrees',  component: AppAgreeListComponent }
+  { path: 'appagrees',  component: AppAgreeListComponent },
+  { path: 'appuploads',  component: AppUploadFormComponent }
+
 ];
 
 @NgModule({
